@@ -24,14 +24,13 @@ public class Clase51 {
 			cadena[i + 3] = ' ';
 		}
 
-
 		for (int i = 0; i < cadena.length; i += 4) {
 
 			match = (cadena[i] == 'I') ? 1 : 0;
 
-			match = (cadena[i] == 'P') ? 1 : 0;
+			match = (cadena[i + 1] == 'P' && match == 1) ? 1 : 0;
 
-			match = (cadena[i] == 'N') ? 1 : 0;
+			match = (cadena[i + 2] == 'N' && match == 1) ? 1 : 0;
 
 			total = total + match;
 
