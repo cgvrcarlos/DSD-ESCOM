@@ -5,6 +5,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Clase51 {
 	public static void main(String[] args) {
 
+		long timeStart, timeEnd;
+
 		int total = 0;
 		int match = 0;
 
@@ -24,6 +26,8 @@ public class Clase51 {
 			cadena[i + 3] = ' ';
 		}
 
+		timeStart = System.nanoTime();
+
 		for (int i = 0; i < cadena.length; i += 4) {
 
 			match = (cadena[i] == 'I') ? 1 : 0;
@@ -36,7 +40,9 @@ public class Clase51 {
 
 		}
 
-		System.err.println("Se encontraron " + total + " coincidencias de IPN");
+		timeEnd = System.nanoTime();
 
+		System.err.println("Se encontraron " + total + " coincidencias de IPN");
+		System.out.println("La busqueda tardo " + (timeEnd - timeStart) + " Nanosegundos");
 	}
 }

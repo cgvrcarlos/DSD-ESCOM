@@ -4,6 +4,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Clase52 {
 	public static void main(String[] args) {
+
+		long timeStart, timeEnd;
+
 		int total = 0;
 
 		int n_tokens = Integer.parseInt(args[0]);
@@ -12,9 +15,14 @@ public class Clase52 {
 
 		StringBuilder cadena = llenarArreglo(n_tokens);
 
+		timeStart = System.nanoTime();
+
 		total = encontrarCadena(token, cadena, n_tokens);
 
+		timeEnd = System.nanoTime();
+
 		System.err.println("Se encontraron " + total + " coincidencias de IPN");
+		System.out.println("La busqueda tardo " + (timeEnd - timeStart) + " Nanosegundos");
 	}
 
 	public static int encontrarCadena(String p, StringBuilder cad, int n) {
