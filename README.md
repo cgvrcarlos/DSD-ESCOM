@@ -44,50 +44,29 @@ Elabore un programa similar al anterior, pero utilizando la clase StringBuilder 
 **Importante**: Su código no debe imprimir más que el número de ocurrencias, de lo contrario estará midiendo los tiempos de impresión más que los de procesamiento. Si es necesario optimice ambos códigos lo mejor posible.
 
 ### Clase 6
-Es posible que un objeto sea miembro de una clase, a esto se le conoce como composición. Sobre la composición se puede decir que:
 
->“Dado que la herencia es tan importante en la POO, casi siempre se enfatiza mucho su uso, de manera que los programadores novatos pueden llegar a pensar que hay que emplearla en todas partes. Esto puede dar lugar a que se hagan diseños demasiados complejos y complicados. En lugar de esto, en primer lugar, cuando se van a crear nuevas clases debe considerarse la composición, ya que es más simple y flexible."
->
->-- <cite>Bruce Eckel - “Thinking in Java”</cite>
-
-Considere el siguiente programa que hace uso de la composición:
+#### Ejercicio 1
+Basándose en el código de la clase, elabore la clase `PoligonoIrreg` la cual representa un polígono irregular en los cuatro cuadrantes del plano cartesiano, cuyos vértices se componen de un arreglo simple de n objetos Coordenada:
 
 ```java
-public class Coordenada {
-
-    private double x, y;
-
-    public Coordenada(double x, double y) {
-
-        this.x = x;
-
-        this.y = y;
-
-    }
-
-    //Metodo getter de x
-
-    public double abcisa( ) { return x; }
-
- 
-
-    //Metodo getter de y
-
-    public double ordenada( ) { return y; }
-
-    
-
-    //Sobreescritura del método de la superclase objeto para imprimir con System.out.println( )
-
-    @Override
-
-    public String toString( ) {
-
-        return "[" + x + "," + y + "]";
-
-    }
-}
+Rectangulo rect1 = new Rectangulo(c1, c2);
 ```
+
+Donde c1 y c2 son dos objetos Coordenada.
+
+#### Ejercicio 2
+Basándose en el código anterior, elabore la clase `PoligonoIrreg` la cual representa un polígono irregular en los cuatro cuadrantes del plano cartesiano, cuyos vértices se componen de un arreglo simple de n objetos Coordenada: 
+
+```java
+private Coordenada[] vertices;
+```
+
+Se debe disponer de los métodos `anadeVertice` para añadir un vértice al polígono, es decir un objeto Coordenada, y sobrescribir el método `toString()` para imprimir el conjunto de vértices que componen al polígono.
+
+#### Ejercicio 3
+Retome el ejercicio anterior para medir cuanto tiempo tarda la creación de un objeto `PoligonoIrreg` con diez millones de vértices. Los vértices se agregan en un ciclo que crea objetos `Coordenada` mediante New y asignando en cada objeto coordenadas aleatorias.
+
+Posteriormente modifíquelo y en lugar de utilizar New, utilice un mutador set (setter) para inicializar los valores de los objetos `Coordenada`. 
 
 ### Clase 7
 
@@ -117,7 +96,7 @@ Impleméntela en las clases Rectangulo y Cuadrado, finalmente pruébelas en la f
 #### Ejercicio 1
 Retome la solución del ejercicio 8 en la clase 6 y modifíquelo para que la clase PoligonoIrreg almacene los vértices en un objeto ArrayList ( véase [Comparator Interface in Java with Examples](https://www.geeksforgeeks.org/list-interface-java-examples/?ref=gcse) ). Asimismo, dentro del método toString haga uso de un bucle for-each para imprimir los elementos de ArrayList.
 
-## Ejercicio 2
+#### Ejercicio 2
 
 Incluya en la clase PoligonoIrreg el método ordenaVertices para ordenar los vértices de menor a mayor en función de su magnitud (distancia de la coordenada al origen) con ayuda de la interfaz Comparator ( véase [Comparator Interface in Java with Examples](https://www.geeksforgeeks.org/list-interface-java-examples/?ref=gcse) ). Se recomienda agregar al objeto coordenada un nuevo miembro magnitud para facilitar el ordenamiento.
 
@@ -128,7 +107,7 @@ En el método principal instancie un objeto PoligonoIrreg al cual posea 10 vért
 #### Ejercicio 1
 Después de leer en la siguiente página ( [Iterators in Java](https://www.geeksforgeeks.org/iterators-in-java/) ) el subtema correspondiente al cursor Iterator de Java, elabore un programa que almacene n CURPs en un ArrayList e imprima todos sus elementos. Posteriormente debe usar al cursor Iterator para eliminar de la lista a todas las CURPs cuyo sexo sea masculino o femenino, según se especifique por el usuario, e imprima al final el arreglo filtrado. Tanto el numero n como el sexo se deben especificar como parámetros del programa.
 
-### Ejercicio 2
+#### Ejercicio 2
 Usando el cursor Iterator elabore un programa que vaya generando CURPs y las vaya imprimiendo y almacenando en un ArrayList en orden ascendente respecto a los primeros cuatro caracteres alfabéticos. Cada que se genera una nueva CURP se debe insertar en el lugar correspondiente de la lista, sin necesidad de usar algún método de ordenamiento. Al igual que el ejercicio anterior, el número de CURPs se debe introducir en la línea de comandos.
 
 Sugerencia: Usar el método compareTo de la clase String para determinar el orden de las CURP.
