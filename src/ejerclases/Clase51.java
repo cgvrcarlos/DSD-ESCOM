@@ -6,7 +6,7 @@ public class Clase51 {
 	public static void main(String[] args) {
 
 		int total = 0;
-		int find = 0;
+		int match = 0;
 
 		int n_tokens = Integer.parseInt(args[0]);
 
@@ -27,13 +27,13 @@ public class Clase51 {
 
 		for (int i = 0; i < cadena.length; i += 4) {
 
-			find = (cadena[i] == 'I') ? 1 : 0;
+			match = (cadena[i] == 'I') ? 1 : 0;
 
-			find = (cadena[i] == 'P') ? 1 : 0;
+			match = (cadena[i] == 'P') ? 1 : 0;
 
-			find = (cadena[i] == 'N') ? 1 : 0;
+			match = (cadena[i] == 'N') ? 1 : 0;
 
-			total = total + find;
+			total = total + match;
 
 		}
 
