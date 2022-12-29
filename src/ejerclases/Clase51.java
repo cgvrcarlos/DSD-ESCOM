@@ -2,7 +2,7 @@ package ejerclases;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Clase5 {
+public class Clase51 {
 	public static void main(String[] args) {
 
 		int total = 0;
